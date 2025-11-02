@@ -19,6 +19,7 @@ highlighter: rouge
 collections:
   posts:
     output: true
+    permalink: /:title/
 
 # Ensure Jekyll includes your assets folder
 include:
