@@ -8,12 +8,6 @@
     <title>{{ page.title | default: site.title }}</title>
     <meta name="description" content="{{ page.excerpt | strip_html | truncate: 160 | default: site.description }}">
     {%- seo -%}
-
-    <!-- Test inline style to verify CSS is working -->
-    <style>
-      body { background: #111 !important; color: #eee !important; }
-    </style>
-
     <!-- External CSS -->
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
   </head>
