@@ -5,10 +5,10 @@ baseurl: "/theoreticallyhireable"
 
 language: "en"
 
-# Minimal theme
+# Theme
 remote_theme: pages-themes/minimal@latest
 
-# GitHub-supported plugins
+# Supported plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
