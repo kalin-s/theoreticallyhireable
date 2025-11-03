@@ -3,12 +3,16 @@ layout: default
 title: Theoretically Hireable
 ---
 
-{% assign all_essays = site.essays | sort: 'date' | reverse %}
-{% for essay in all_essays %}
+{% for essay in site.essays %}
 <article>
   <h2><a href="{{ essay.url | relative_url }}">{{ essay.title }}</a></h2>
-  <p class="post-meta">{{ essay.date | date: "%B %-e, %Y" }}{% if essay.tags %} · {{ essay.tags | array_to_sentence_string }}{% endif %}</p>
-  <p>{{ essay.excerpt }}</p>
+  {% if essay.date %}
+    <p class="post-meta">{{ essay.date | date: "%B %-e, %Y" }}</p>
+  {% endif %}
+
+  <p>
+    {{ essay.content | strip_html | truncate: 250 }}
+    {% if essay.content | strip_html | size > 250 %}… <a href="{{ essay.url | relative_url }}">read more</a>{% endif %}
+  </p>
 </article>
-<hr style="border:none; border-top:1px solid rgba(255,255,255,0.03); margin:1rem 0;">
 {% endfor %}
